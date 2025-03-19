@@ -18,13 +18,11 @@ Pod::Spec.new do |s|
     'SWIFT_VERSION' => '5.0',
     'DEFINES_MODULE' => 'YES'
   }
-  
+
   s.module_map = 'ios/HotUpdater/HotUpdater.modulemap'
 
   s.source_files = "ios/**/*.{h,m,mm}"
-  if ENV['RCT_NEW_ARCH_ENABLED'] != '1' then
-    s.exclude_files = "ios/generated/**/*"
-  end
+  s.exclude_files = "ios/generated/**/*"
 
   s.dependency "SSZipArchive", "~> 2.2.2"
 
@@ -49,5 +47,5 @@ Pod::Spec.new do |s|
       s.dependency "RCTTypeSafety"
       s.dependency "ReactCommon/turbomodule/core"
     end
-  end    
+  end
 end

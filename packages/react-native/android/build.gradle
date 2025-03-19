@@ -94,8 +94,10 @@ android {
         java.srcDirs += [
           "src/newarch",
           // Codegen specs
-          "generated/java",
-          "generated/jni"
+          // "generated/java",
+          // "generated/jni"
+          "${project.buildDir}/generated/android/app/build/generated/source/codegen/java",
+          "${project.buildDir}/generated/android/app/build/generated/source/codegen/jni",
         ]
       } else {
         java.srcDirs += ["src/oldarch"]
